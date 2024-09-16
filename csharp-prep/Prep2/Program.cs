@@ -9,20 +9,24 @@ class Program
 
         int GradePercentage = int.Parse(ValueFromUser);
         string letter = "F";
+        bool passed = false;
 
         if (GradePercentage >= 90)
         {
            letter = "A";
+           passed = true;
         }
 
         else if (GradePercentage >= 80)
         {
            letter = "B";
+           passed = true;
         }
 
         else if (GradePercentage >= 70)
         {
            letter = "C";
+           passed = true;
         }
 
         else if (GradePercentage >= 60)
@@ -35,7 +39,16 @@ class Program
            letter = "F";
         }
 
-        Console.WriteLine($"Your grade is {letter}.");
+
+        if (passed == true)
+        {
+            Console.WriteLine($"Your grade is {letter}. You passed! Congratulations!");
+        }
+
+        else
+        {
+            Console.WriteLine($"Your grade is {letter}. Better luck next time!");
+        }
         Console.WriteLine("");
     }
 }
