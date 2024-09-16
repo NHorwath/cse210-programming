@@ -5,10 +5,10 @@ class Program
     static void Main(string[] args)
     {  
         Random randomGenerator = new Random();
-        int number = randomGenerator.Next(1, 100);
+        int number = randomGenerator.Next(1, 101);
 
-        Console.WriteLine($"Guess the number: {number}");
-        int UserNumber = 0;
+        Console.WriteLine($"Guess the Magic number: ");
+        int UserNumber = -1;
         int UserTries = 0;
 
         do
@@ -18,22 +18,18 @@ class Program
             UserNumber = int.Parse(UserInput);
             UserTries++;
 
-
-
             if (UserNumber < number)
             {
                 Console.WriteLine("Higher");
-                Console.WriteLine("");
             }
 
             else if (UserNumber > number)
             {
                 Console.WriteLine("Lower");
-                Console.WriteLine("");
             }
         } while (UserNumber != number);
 
-        Console.WriteLine("You guessed it!");
+        Console.Write("You guessed it! ");
 
         if (UserTries == 1)
         {
@@ -42,7 +38,6 @@ class Program
         else
         {
             Console.WriteLine($"You took {UserTries} tries!");
-            Console.WriteLine("");
         }
     }
 }
