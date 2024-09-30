@@ -4,17 +4,20 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<string> words = new List<string>();
-
-        words.Add("phone");
-        words.Add("keyboard");
-        words.Add("mouse");
-
-        for (int i = 0; i < words.Count; i++)
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
+        PromptGenerator prompt = new();
         {
-            Console.WriteLine(words[i]);
+            prompt._prompts = "Write about something you learned today:";
         }
 
+        Entry date1 = new();
+        {
+            date1._date = theCurrentTime.ToShortDateString();
+            date1._entryText = prompt._prompts;
+        }
+
+        date1.Display();
     }
     
 }
